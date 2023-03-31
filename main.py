@@ -436,7 +436,8 @@ class GameWindow(tk.Toplevel):
     def reset_game(self):
         self.image_pick_button.config(state=tk.NORMAL)
         self.image_path = ""
-        self.image_path_label.config(text="")
+        if(self.image_path_label is not None):
+            self.image_path_label.config(text="")
         self.image_url_entry.config(state=tk.NORMAL)
         self.image_url.set("")
         self.create_or_destroy_name_entry()
